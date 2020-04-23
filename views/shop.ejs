@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+
+  <h1>List Company</h1><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <% for (let i = 0; i<data.length; i++) { %>
+            <tbody>
+                <tr>
+                    <td><%= data[i].name%></td>
+                    <td><%= data[i].type%></td>
+                    <td><%= data[i].deskripsi%></td>
+                    <td><a class="btn btn-info" href="/Shop/<%= data[i].id %>/add" role="button">Add Endorsement</a>
+                    <a class="btn btn-primary" href="/Shop/<%= data[i].id %>/list" role="button">Celeb List</a></td>
+                </tr>
+              </tbody>
+        <% } %>
+      </table>
+  <%- include('./partials/foot') %>

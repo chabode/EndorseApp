@@ -1,0 +1,39 @@
+<%- include('./partials/head') %>
+
+<% if (error) {%>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<%}%> 
+  <h1>Add new Celeb</h1>
+  <form action="/Seleb/add" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" name="name" placeholder="e.g: John Doe">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Age</label>
+        <input type="text" class="form-control" name="age" placeholder="e.g: 20">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Gender</label>
+        <select class="form-control" name="gender">
+            <option selected disabled>---SELECT---</option>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Followers</label>
+      <input type="text" class="form-control" name="followers" placeholder="e.g: 500000">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Fee</label>
+        <input type="text" class="form-control" name="fee" placeholder="e.g: 1000000">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <a class="btn btn-danger" href="/Seleb" role="button">Cancel</a>
+    </div>
+  </form>
+  <%- include('./partials/foot') %>

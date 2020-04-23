@@ -1,0 +1,39 @@
+<%- include('./partials/head') %>
+
+<% if (error) {%>
+  <div class="alert alert-danger" role="alert">
+    <%= error %>
+  </div>
+<%}%> 
+  <h1>Edit Your Celebrity</h1><br>
+  <form action="/Seleb/<%= data.id%>/edit" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" class="form-control" name="name" value="<%= data.name %>">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Age</label>
+        <input type="text" class="form-control" name="age" value="<%= data.age %>">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Gender</label>
+        <select class="form-control" name="gender">
+            <option selected disabled>---SELECT---</option>
+            <option value="male" <%= data.gender == "male" ? "selected" : '' %>>male</option>
+            <option value="female" <%= data.gender == "female" ? "selected" : '' %>>female</option>
+        </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Followers</label>
+      <input type="text" class="form-control" name="followers" value="<%= data.followers %>">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Fee</label>
+        <input type="text" class="form-control" name="fee" value="<%= data.fee %>">
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+        <a class="btn btn-danger" href="/Seleb" role="button">Cancel</a>
+    </div>
+  </form>
+  <%- include('./partials/foot') %>

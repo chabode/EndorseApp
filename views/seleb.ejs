@@ -1,0 +1,38 @@
+<%- include('./partials/head') %>
+
+  <h1 style="text-align: center;">List Celebrity</h1>
+
+  <a class="btn btn-success" href="/Seleb/add" role="button" style="margin-bottom: 10px;">Add Seleb</a>
+
+  <% if (data) { %>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Followers</th>
+                <th scope="col">Fee</th>
+                <th scope="col" colspan="3">Option</th>
+            </tr>
+        </thead>
+        <% for (let i = 0; i<data.length; i++) { %>
+            <tbody>
+                <tr>
+                    <td><%= data[i].name%></td>
+                    <td><%= data[i].age%></td>
+                    <td><%= data[i].gender%></td>
+                    <td><%= rupiah(data[i].followers)%></td>
+                    <td>Rp <%= rupiah(data[i].fee)%></td>
+                    <td><a class="btn btn-info" href="/Seleb/<%= data[i].id %>/edit" role="button">Edit</a>
+                    <a class="btn btn-danger" href="/Seleb/<%= data[i].id %>/delete" role="button" onclick="return confirm('Are you sure to delete  <%= data[i].name%>') ">Delete</a>
+                    <a class="btn btn-info" href="/Seleb/<%= data[i].id%>/collabs" role="button">Product Endorsement</a></td>
+
+
+                </tr>
+            </tbody>
+        <% } %>
+      </table>
+  <% } %>
+
+  <%- include('./partials/foot') %>

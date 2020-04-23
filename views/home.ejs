@@ -1,0 +1,10 @@
+<%- include('./partials/head') %>
+
+  <h1 style="text-align: center;">Welcome to Artist Management Page</h1>
+  <% if(!isUser) { %>
+    <h3 style="text-align: center;"><a href="/login" role="button" >LOGIN HERE</a></h3>
+  <% } else { %>
+    <h3 style="text-align: center;">You're already logged in as Admin</h3>
+    <h3 style="text-align: center;"><a href="/logout" role="button" >LOGOUT HERE</a></h3>
+  <% }%> 
+  <%- include('./partials/foot') %>

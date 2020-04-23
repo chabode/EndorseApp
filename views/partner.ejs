@@ -1,0 +1,23 @@
+<%- include('./partials/head') %>
+
+  <h1><%= listShop[0].name %> Celebrity list</h1><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Followers</th>
+                <th scope="col">Fee</th>
+            </tr>
+        </thead>
+        <% for (let i = 0; i<listShop[0].Selebs.length; i++) { %>
+            <tbody>
+                <tr>
+                    <td><%= listShop[0].Selebs[i].name%></td>
+                    <td><%= rupiah(listShop[0].Selebs[i].followers)%></td>
+                    <td>Rp<%= rupiah(listShop[0].Selebs[i].fee)%></td>
+                </tr>
+              </tbody>
+        <% } %>
+      </table>
+  <%- include('./partials/foot') %>

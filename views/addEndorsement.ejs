@@ -1,0 +1,26 @@
+<%- include('./partials/head') %>
+
+<div class="w3-container" style="margin-left:15%">
+  <% for(let i = 0;i < data.length ; i++){ %>
+    <div class="w3-card-4" style="width:80%">
+      <header class="w3-container w3-light-grey">
+        <h3><%= data[i].name%></h3>
+      </header>
+      <div class="w3-container">
+        <p style="font-size: 18px;"><%= data[i].gender %> - Followers : <%= rupiah(data[i].followers) %> - Fee : Rp<%=rupiah( data[i].fee)%></p>
+        <hr>
+      </div>
+      <form action='/Shop/<%= shop[0].id%>/add/<%= data[i].id %>' method="POST">
+        <% for(let a = 0; a < shop[0].Selebs.length;a++){ %>
+          <% if (data[i].id !== shop[0].Selebs[a].id) { %>
+          <input type="submit" value="+ ENDORSE" class="w3-button w3-block w3-dark-grey">
+          <% break; } else {%>
+          <input type="submit" value="+ ENDORSE" class="w3-button w3-block w3-dark-grey">
+          <% break; }%>    
+      <% }%>
+      </form>
+    </div>
+    <br>
+    <% }%>
+</div>
+  <%- include('./partials/foot') %>
