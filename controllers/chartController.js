@@ -7,7 +7,6 @@ class ChartController {
     }
     static showAllShop(req,res){
         SelebShop.findAll({
-            include : [{model:Shop}],
             group : ['ShopId'],
             attributes: ['ShopId', [sequelize.fn('COUNT', 'ShopId'), 'Count']]
         })
