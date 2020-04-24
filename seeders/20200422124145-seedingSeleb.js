@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Selebs', [
-      {
+    {
       name: 'Raditya Dika',
       age: 30,
       gender : 'male',
@@ -30,6 +30,24 @@ module.exports = {
       createdAt : new Date(),
       updatedAt : new Date()
     },
+    {
+      name: 'Karina Novilda',
+      age: 25,
+      gender : 'female',
+      followers : 250000,
+      fee : 1.4e6,
+      createdAt : new Date(),
+      updatedAt : new Date()
+    },
+    {
+      name: 'Arief Rohman',
+      age: 26,
+      gender : 'male',
+      followers : 100000,
+      fee : 2.1e6,
+      createdAt : new Date(),
+      updatedAt : new Date()
+    }
   ], {});
     /*
       Add altering commands here.

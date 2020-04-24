@@ -86,6 +86,18 @@ module.exports = {
         ShopId: 4,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        SelebId: 4,
+        ShopId: 7,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        SelebId: 4,
+        ShopId: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ]
 
