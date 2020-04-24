@@ -13,7 +13,7 @@ router.post('/add', SelebController.add)
 router.get('/:id/edit', checkSession, SelebController.editForm)
 router.post('/:id/edit', SelebController.edit)
 router.get('/:id/delete', checkSession, SelebController.delete)
-router.get('/:seleb_id/collabs', SelebController.collabs)
+router.get('/:seleb_id/collabs', checkSession, SelebController.collabs)
 
 
 module.exports = router
