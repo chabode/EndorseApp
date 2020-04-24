@@ -7,7 +7,7 @@
         <h3><%= data[i].name%></h3>
       </header>
       <div class="w3-container">
-        <p style="font-size: 18px;"><%= data[i].gender %> - Followers : <%= rupiah(data[i].followers) %> - Fee : Rp<%=rupiah( data[i].fee)%></p>
+        <p style="font-size: 18px;"><%= data[i].dataEndorsement() %></p>
         <hr>
       </div>
       <form action='/Shop/<%= shop[0].id%>/add/<%= data[i].id %>' method="POST">

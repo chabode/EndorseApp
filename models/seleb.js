@@ -2,7 +2,15 @@
 module.exports = (sequelize, DataTypes) => {
   const Sequelize = sequelize.Sequelize
   const Model = Sequelize.Model
-  class Seleb extends Model{}
+  const rupiah = require('../helpers/rupiah')
+  class Seleb extends Model{
+    dataEndorsement(){
+      let gender = this.gender
+      let followers = rupiah(this.followers)
+      let fee = rupiah(this.fee)
+      return `${gender} - Followers : ${followers} - Fee : Rp. ${fee}`
+    }
+  }
   Seleb.init({
     name: {
       type: DataTypes.STRING,
@@ -51,6 +59,8 @@ module.exports = (sequelize, DataTypes) => {
       }
      }
   }, { sequelize });
+
+
   Seleb.associate = function(models) {
     // associations can be defined here
     Seleb.belongsToMany(models.Shop,{through:models.SelebShop})
