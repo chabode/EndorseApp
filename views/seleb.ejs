@@ -8,6 +8,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Gender</th>
@@ -19,6 +20,7 @@
         <% for (let i = 0; i<data.length; i++) { %>
             <tbody>
                 <tr>
+                    <td><%= data[i].id %></td>
                     <td><%= data[i].name%></td>
                     <td><%= data[i].age%></td>
                     <td><%= data[i].gender%></td>

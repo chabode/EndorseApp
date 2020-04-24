@@ -4,7 +4,7 @@ const rupiah = require('../helpers/rupiah')
 class SelebController{
   static show(req,res){
     Seleb.findAll({
-      order: [['followers','desc']]
+      order: [['id','asc']]
     })
     .then(data=> {
       res.render('seleb',{data, rupiah})
@@ -34,7 +34,7 @@ class SelebController{
         error.push(err.errors[i].message)
       }
       res.redirect(`/Seleb/add?error=${error.join(', ')}`)
-      console.log(req.body.followers)
+      console.log(Number(req.body.age))
       // res.send(error)
     })
 

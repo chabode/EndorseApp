@@ -5,6 +5,7 @@
     <table class="table">
         <thead>
             <tr>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Type</th>
                 <th scope="col">Description</th>
@@ -14,6 +15,7 @@
         <% for (let i = 0; i<data.length; i++) { %>
             <tbody>
                 <tr>
+                    <td><%= data[i].id%></td>
                     <td><%= data[i].name%></td>
                     <td><%= data[i].type%></td>
                     <td><%= data[i].deskripsi%></td>

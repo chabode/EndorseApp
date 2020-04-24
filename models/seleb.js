@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       validate:{
         min: {
-          args : 0,
+          args : [0],
           msg : 'Age Required'
         }
       }
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       validate:{
         min: 
         {
-          args: 10000,
+          args: [10000],
           msg : 'Followers Minimal 10k'
         },
       }
