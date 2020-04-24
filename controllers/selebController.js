@@ -33,9 +33,9 @@ class SelebController{
       for (let i = 0; i < err.errors.length;i++){
         error.push(err.errors[i].message)
       }
-      // res.redirect(`/Seleb/add?error=${error.join(', ')}`)
+      res.redirect(`/Seleb/add?error=${error.join(', ')}`)
       console.log(req.body.followers)
-      res.send(error)
+      // res.send(error)
     })
 
   }

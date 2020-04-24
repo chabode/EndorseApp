@@ -54,7 +54,7 @@ module.exports = (sequelize, DataTypes) => {
   }, { sequelize });
 
   Seleb.beforeCreate((instance,options)=> {
-    if(!instance.fee){
+    if(instance.fee == null || instance.fee == 0){
       instance.fee = instance.followers
     }
   })
