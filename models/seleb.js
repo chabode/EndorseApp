@@ -49,17 +49,15 @@ module.exports = (sequelize, DataTypes) => {
       }
      },
     fee: {
-      type: DataTypes.INTEGER,
-      validate:{
-        min: 
-        {
-          args: 1000000,
-          msg : 'Minimal Fee 1 Juta'
-        },
-      }
+      type: DataTypes.INTEGER
      }
   }, { sequelize });
 
+  Seleb.beforeCreate((instance,options)=> {
+    if(!instance.fee){
+      instance.fee = instance.followers
+    }
+  })
 
   Seleb.associate = function(models) {
     // associations can be defined here
